@@ -6,13 +6,13 @@ import PropTypes from 'prop-types';
 class Column extends React.Component {
 
     static propTypes = {
-        minititle: PropTypes.string.isRequired,
+        columns: PropTypes.object.isRequired,
     }
     
   render() {
     return (
       <section className={styles.component}>
-            <h3 className={styles.title}>{this.props.minititle}</h3>
+            <h3 className={styles.title}>{this.props.columns.title}</h3>
       </section>
     );
   }
