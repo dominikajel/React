@@ -2,16 +2,19 @@ import React from 'react';
 import styles from './Column.scss';
 import PropTypes from 'prop-types';
 import Card from '../Card/Card';
-// import { settings } from '../../data/dataStore';
-//import Creator from '../Creator/Creator';
+import { settings } from '../../data/dataStore';
+// import Creator from '../Creator/Creator';
 import Icon from '../Icon/Icon';
 
 class Column extends React.Component {
- 
   static propTypes = {
     title: PropTypes.string,
     cards: PropTypes.object,
     icon: PropTypes.element,
+  };
+
+  static defaultProps = {
+    icon: settings.defaultColumnIcon,
   };
 
   render() {
@@ -25,7 +28,7 @@ class Column extends React.Component {
           {title}
         </h3>
 
-        <div >
+        <div>
           {cards.map((cardData) => (
             <Card key={cardData.id} {...cardData} />
           ))}
